@@ -1,0 +1,23 @@
+
+.standard-modal .ant-modal-content {
+  background-color: lavender;
+  color: cornflowerblue;
+}
+
+.standard-modal .ant-modal-header {
+  background-color: lavender;
+  border-bottom: 1px solid lavender;
+}
+
+.standard-modal .ant-modal-title {
+  color: cornflowerblue;
+}
+
+.standard-modal .ant-modal-close {
+  color: violet;
+}
+
+.standard--modal .ant-modal-footer {
+  background-color: lavender;
+  border-top: 1px solid lavender;
+}

@@ -1,0 +1,14 @@
+div::-webkit-scrollbar{
+  width: 6px;
+}
+div::-webkit-scrollbar-track{
+  background: silver;
+  border: none;
+  border-radius: 5px;
+  box-shadow: inset 0 0 2px slategray; 
+}
+div::-webkit-scrollbar-thumb{
+  background: snow;
+  border-radius: 5px;
+  box-shadow: none;
+}

@@ -1,0 +1,18 @@
+{
+  "locale": "ja",
+  "server": {
+    "url": "http://localhost:7000",
+    "base": "taskboard",
+    "img": "static/avatars",
+    "ext": ".png"
+  },
+  "avatars": [
+    "gopher",
+    "dog",
+    "bomb",
+    "missile",
+    "toro",
+    "ikura",
+    "gopher_paris"
+  ]
+}
