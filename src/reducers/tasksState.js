@@ -63,7 +63,6 @@ const tasksState = (state = initialState, action) => {
       return { ...state }
     case DELETE_TASK_SUCCESS_EVENT:
       // remove original task
-      console.error(payload)
       Object.keys(state.boardIdToTasks).forEach(boardId => {
         state.boardIdToTasks[boardId] = state.boardIdToTasks[boardId]
           .filter((task) => { return task.id !== payload.task.id })

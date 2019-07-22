@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import PropTypes from "prop-types"
 import { Row, Col, Tooltip } from "antd"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Avatar from "../basics/Avatar"
@@ -75,7 +76,13 @@ class MenuBar extends Component {
       showProfileDialog: !this.state.showProfileDialog,
     })
   }
+}
 
+MenuBar.propTypes = {
+  loginState: PropTypes.object.isRequired,
+  switchMainViewIconClick: PropTypes.func.isRequired,
+  onUserProfileSaveButtonClick: PropTypes.func.isRequired,
+  onLogoutIconClick: PropTypes.func.isRequired,
 }
 
 export default MenuBar

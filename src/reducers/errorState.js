@@ -1,4 +1,4 @@
-import { SHOW_ERROR_CLOSE_EVENT, LOGIN_FAILURE_EVENT, SIGNUP_FAILURE_EVENT } from "../actions";
+import { SHOW_ERROR_CLOSE_EVENT, LOGIN_FAILURE_EVENT, SIGNUP_FAILURE_EVENT } from "../actions"
 
 const initialState = { error: undefined }
 const errorState = (state = initialState, action) => {

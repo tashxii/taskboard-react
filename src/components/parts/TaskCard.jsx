@@ -5,8 +5,8 @@ import { Row, Badge, Popover, Popconfirm, Tooltip } from "antd"
 import Modal from "../basics/Modal"
 import Avatar from "../basics/Avatar"
 import TaskForm from "./TaskForm"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import I18n from "../../libs/common/i18n";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import I18n from "../../libs/common/i18n"
 
 class TaskCard extends Component {
   constructor(props) {
@@ -29,7 +29,7 @@ class TaskCard extends Component {
     const backgroundColor = (task.moving) ? "lavender" : "white"
     return (
       <Draggable draggableId={task.id} index={task.dispOrder}>
-        {(provided, snapshot) =>
+        {(provided/*, snapshot*/) =>
           <div
             ref={provided.innerRef}
             {...provided.draggableProps}

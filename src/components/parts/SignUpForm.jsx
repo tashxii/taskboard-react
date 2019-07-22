@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import PropTypes from "prop-types"
 import { Row, Col, Input, Button, Select } from "antd"
 import { UserCreateRequest } from "../../libs/models/user"
 import Avatar from "../basics/Avatar"
@@ -99,6 +100,11 @@ class SignUpForm extends Component {
   handleAvatarChange(value) {
     this.setState({ avatar: value })
   }
+}
+
+SignUpForm.propTypes = {
+  loginState: PropTypes.object.isRequired,
+  onSignUpButtonClick: PropTypes.func.isRequired,
 }
 
 export default SignUpForm

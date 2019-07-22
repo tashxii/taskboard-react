@@ -33,5 +33,4 @@ export default class UserApi {
         }, 334) // wait a litle while
     })
   }
-
 }

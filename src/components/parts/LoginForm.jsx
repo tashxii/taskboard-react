@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import PropTypes from "prop-types"
 import { Row, Col, Input, Button } from "antd"
 import Modal from "../basics/Modal"
 import ErrorCard from "../basics/ErrorCard"
@@ -85,6 +86,12 @@ class LoginForm extends Component {
       showSignUpDialog: !this.state.showSignUpDialog,
     })
   }
+}
+
+LoginForm.propTypes = {
+  loginState: PropTypes.object.isRequired,
+  onLoginButtonClick: PropTypes.func.isRequired,
+  clearLoginErrors: PropTypes.func.isRequired,
 }
 
 export default LoginForm

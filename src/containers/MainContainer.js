@@ -1,7 +1,7 @@
 import { connect } from "react-redux"
 import { withRouter } from "react-router-dom"
 import MainPage from "../components/pages/MainPage"
-import { showErrorCloseEvent } from "../actions";
+import { showErrorCloseEvent } from "../actions"
 
 const mapStateToProps = (state) => ({
   loginState: state.loginState,

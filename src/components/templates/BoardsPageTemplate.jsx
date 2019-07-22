@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import PropTypes from "prop-types"
 import { DragDropContext } from "react-beautiful-dnd"
 import { Row, Col, Input, Button, Spin } from "antd"
 import Modal from "../basics/Modal"
@@ -108,7 +109,6 @@ class BoardsPageTemplate extends Component {
   }
 
   onDragEnd(result) {
-    console.warn(result)
     if (!result.destination) {
       return
     }
@@ -120,6 +120,16 @@ class BoardsPageTemplate extends Component {
     this.props.onDropTask(taskId, fromBoardId, fromDispOrder, toBoardId, toInsertIndex)
   }
 
+}
+
+BoardsPageTemplate.propTypes = {
+  usersState: PropTypes.object.isRequired,
+  boardsState: PropTypes.object.isRequired,
+  tasksState: PropTypes.object.isRequired,
+  loadBoardList: PropTypes.func.isRequired,
+  loadUserList: PropTypes.func.isRequired,
+  onNewTaskButtonClick: PropTypes.func.isRequired,
+  onDropTask: PropTypes.func.isRequired,
 }
 
 export default BoardsPageTemplate

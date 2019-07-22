@@ -18,7 +18,6 @@ import {
 } from "../actions"
 import TaskService from "../libs/services/taskService"
 
-
 function* handleListTasks() {
   yield takeEvery(LIST_TASKS_START_EVENT, listTasks)
 }
@@ -67,7 +66,6 @@ function* updateTask(action) {
     const max = state.boardIdToTasks[payload.task.boardId]
       .reduce((p, task) => { return (task.dispOrder > p) ? task.dispOrder : p }, 0)
     payload.task.dispOrder = (state.boardIdToTasks[payload.task.boardId].length === 1) ? 1 : max + 1
-    console.warn(payload.task.dispOrder)
   }
   const { task, error } = yield call(TaskService.updateAsync, payload.task)
   if (!error) {
@@ -83,7 +81,6 @@ function* handleDeleteTask() {
 
 function* deleteTask(action) {
   const payload = action.payload
-  console.error(payload.task)
   const { error } = yield call(TaskService.deleteAsync, payload.task)
   if (!error) {
     yield put(deleteTaskSuccessEvent(payload.task))

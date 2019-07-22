@@ -40,5 +40,4 @@ export default class ApiErrorConverter {
   static createSystemError(error, summary) {
     return new ErrorMessage("500(Internal Server Error)", summary, I18n.get("システムエラーが発生しました {0}", error.messsage))
   }
-
 }

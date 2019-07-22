@@ -5,7 +5,7 @@ import { Droppable } from "react-beautiful-dnd"
 import User from "../../libs/models/user"
 import TaskCard from "./TaskCard"
 import styles from "./BoardLane.css"
-import { Spin } from "antd";
+import { Spin } from "antd"
 
 const Lane = styled.div`
   text-align: center;
@@ -50,12 +50,11 @@ class BoardLane extends Component {
     }
     const totalEstimateSize = tasks.reduce((p, task) => p + (task.estimateSize || 0), 0)
     let index = 0
-    console.warn(moving)
     return (
       <Lane>
         <Spin spinning={moving}>
           {this.props.board.name} - {totalEstimateSize} Pt.
-        <Droppable droppableId={this.props.board.id}>
+          <Droppable droppableId={this.props.board.id}>
             {(provided, snapshot) =>
               <div
                 {...provided.droppableProps}
@@ -94,6 +93,12 @@ class BoardLane extends Component {
 BoardLane.propTypes = {
   board: PropTypes.object.isRequired,
   taskFilter: PropTypes.string.isRequired,
+  tasksState: PropTypes.object.isRequired,
+  usersState: PropTypes.object.isRequired,
+  boardsState: PropTypes.object.isRequired,
+  loadTaskList: PropTypes.func.isRequired,
+  onUpdateTaskButtonClick: PropTypes.func.isRequired,
+  onDeleteTaskButtonClick: PropTypes.func.isRequired,
 }
 
 export default BoardLane

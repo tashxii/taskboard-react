@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import PropTypes from "prop-types"
 import { Redirect } from "react-router-dom"
 import { Row } from "antd"
 import Notification from "../basics/Notification"
@@ -38,6 +39,13 @@ class MainPageTemplate extends Component {
       </div>
     )
   }
+}
+
+MainPageTemplate.propTypes = {
+  mainState: PropTypes.object.isRequired,
+  loginState: PropTypes.object.isRequired,
+  errorState: PropTypes.object.isRequired,
+  onShowErrorClose: PropTypes.func.isRequired,
 }
 
 export default MainPageTemplate
