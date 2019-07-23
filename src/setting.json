@@ -1,7 +1,7 @@
 {
   "locale": "ja",
   "server": {
-    "url": "http://172.24.35.228:7000",
+    "url": "http://localhost:7000",
     "base": "taskboard",
     "img": "static/avatars",
     "ext": ".png"
@@ -13,8 +13,6 @@
     "missile",
     "toro",
     "ikura",
-    "gopher_paris",
-    "popu",
-    "pipi"
+    "gopher_paris"
   ]
 }
