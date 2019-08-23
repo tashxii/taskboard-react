@@ -24,9 +24,9 @@ function* handleListTasks() {
 
 function* listTasks(action) {
   const payload = action.payload
-  const { tasks, error } = yield call(TaskService.listAsync, payload.board.id)
+  const { tasks, error } = yield call(TaskService.listAsync, payload.boardId)
   if (!error) {
-    yield put(listTasksSuccessEvent(payload.board, tasks))
+    yield put(listTasksSuccessEvent(payload.boardId, tasks))
   } else {
     yield put(listTasksFailureEvent(error))
   }

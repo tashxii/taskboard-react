@@ -14,17 +14,17 @@ export const UPDATE_TASK_ORDERS_START_EVENT = "UPDATE_TASK_ORDERS_START_EVENT"
 export const UPDATE_TASK_ORDERS_SUCCESS_EVENT = "UPDATE_TASK_ORDERS_SUCCESS_EVENT"
 export const UPDATE_TASK_ORDERS_FAILURE_EVENT = "UPDATE_TASK_ORDERS_FAILURE_EVENT"
 
-export const listTasksStartEvent = (board) => ({
+export const listTasksStartEvent = (boardId) => ({
   type: LIST_TASKS_START_EVENT,
   payload: {
-    board: board,
+    boardId: boardId,
   }
 })
 
-export const listTasksSuccessEvent = (board, tasks) => ({
+export const listTasksSuccessEvent = (boardId, tasks) => ({
   type: LIST_TASKS_SUCCESS_EVENT,
   payload: {
-    board: board,
+    boardId: boardId,
     tasks: tasks,
   }
 })
@@ -99,7 +99,13 @@ export const deleteTaskFailureEvent = (error) => ({
   }
 })
 
-export const updateTaskOrdersStartEvent = (taskId, fromBoardId, fromDispOrder, toBoardId, toInsertIndex) => ({
+export const updateTaskOrdersStartEvent = (
+  taskId,
+  fromBoardId,
+  fromDispOrder,
+  toBoardId,
+  toInsertIndex,
+) => ({
   type: UPDATE_TASK_ORDERS_START_EVENT,
   payload: {
     taskId,
@@ -110,7 +116,14 @@ export const updateTaskOrdersStartEvent = (taskId, fromBoardId, fromDispOrder, t
   }
 })
 
-export const updateTaskOrdersSuccessEvent = (taskId, fromBoardId, fromDispOrder, toBoardId, toDispOrder, toInsertIndex) => ({
+export const updateTaskOrdersSuccessEvent = (
+  taskId,
+  fromBoardId,
+  fromDispOrder,
+  toBoardId,
+  toDispOrder,
+  toInsertIndex,
+) => ({
   type: UPDATE_TASK_ORDERS_SUCCESS_EVENT,
   payload: {
     taskId,

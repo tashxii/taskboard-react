@@ -4,7 +4,8 @@
     "url": "http://localhost:7000",
     "base": "taskboard",
     "img": "static/avatars",
-    "ext": ".png"
+    "ext": ".png",
+    "wsurl": "ws://localhost:7000/taskboard/ws"
   },
   "avatars": [
     "gopher",

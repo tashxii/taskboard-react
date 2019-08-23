@@ -46,6 +46,11 @@ export default class ApiCommon {
       getUpdateOption(ApiCommon.Method.DELETE, request)
     )
   }
+
+  static createWebsocket(loginUser) {
+    const wsurl = `${setting.wsurl}?from=${loginUser.id}`
+    return new WebSocket(wsurl)
+  }
 }
 
 const getApiUrl = (path) => {
@@ -78,19 +83,19 @@ const doFetch = async (path, option) => {
   let ok = false
   let status = -1
   console.debug("API-request:", path, option)
-  return await fetch(
-    path,
-    option,
-  ).then(response => {
-    ok = response.ok
-    status = response.status
-    return response.text()
-  }).then(text => {
-    const json = (text !== "") ? JSON.parse(text) : {}
-    console.debug("API-response:", path, status, { json })
-    return { ok, status, json }
-  }).catch(error => {
-    console.debug("API-error:", path, { error })
-    throw error
-  })
+  return await fetch(path, option)
+    .then(response => {
+      ok = response.ok
+      status = response.status
+      return response.text()
+    })
+    .then(text => {
+      const json = text !== "" ? JSON.parse(text) : {}
+      console.debug("API-response:", path, status, { json })
+      return { ok, status, json }
+    })
+    .catch(error => {
+      console.debug("API-error:", path, { error })
+      throw error
+    })
 }

@@ -24,7 +24,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(listBoardsStartEvent())
   },
   loadTaskList(board) {
-    dispatch(listTasksStartEvent(board))
+    dispatch(listTasksStartEvent(board.id))
   },
   onNewTaskButtonClick(task) {
     dispatch(createTaskStartEvent(task))

@@ -4,8 +4,8 @@ import ApiErrorConverter from "./converter/apiErrorConverter"
 import I18n from "../common/i18n"
 
 export default class TaskService {
-  static listAsync = async (taskId) => {
-    return await TaskApi.list(taskId)
+  static listAsync = async (boardId) => {
+    return await TaskApi.list(boardId)
       .then((res) => {
         if (res.ok) {
           const tasks = []

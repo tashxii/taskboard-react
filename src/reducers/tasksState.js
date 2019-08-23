@@ -38,7 +38,7 @@ const tasksState = (state = initialState, action) => {
     case CREATE_TASK_FAILURE_EVENT:
       return { ...state, isSavingNewTask: false }
     case LIST_TASKS_SUCCESS_EVENT:
-      state.boardIdToTasks[payload.board.id] = payload.tasks
+      state.boardIdToTasks[payload.boardId] = payload.tasks
       return { ...state }
     case UPDATE_TASK_START_EVENT:
       return { ...state, isSavingTask: true }
@@ -102,7 +102,7 @@ const tasksState = (state = initialState, action) => {
       }
       let dragTask = undefined
       let fromIndex = 0
-      for (let i = 0; i < fromTasks.length; i++) {
+      for (let i = 0;i < fromTasks.length;i++) {
         const task = fromTasks[i]
         if (task.id === taskId) {
           dragTask = task
