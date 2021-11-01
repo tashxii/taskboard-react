@@ -22,4 +22,4 @@ yarn start
 Connect to localhost:3000
 
 # Application image
-[image](./image/taskboard-react-image.gif)
+![image](./image/taskboard-react-image.gif)
